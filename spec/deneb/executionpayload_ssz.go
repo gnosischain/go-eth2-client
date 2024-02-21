@@ -370,7 +370,7 @@ func (e *ExecutionPayload) HashTreeRootWith(hh ssz.HashWalker) (err error) {
 				return
 			}
 		}
-		hh.MerkleizeWithMixin(subIndx, num, 16)
+		hh.MerkleizeWithMixin(subIndx, num, 8)
 	}
 
 	// Field (15) 'BlobGasUsed'
