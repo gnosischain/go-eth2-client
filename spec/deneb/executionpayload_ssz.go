@@ -236,7 +236,7 @@ func (e *ExecutionPayload) UnmarshalSSZ(buf []byte) error {
 	// Field (14) 'Withdrawals'
 	{
 		buf = tail[o14:]
-		num, err := ssz.DivideInt2(len(buf), 44, 16)
+		num, err := ssz.DivideInt2(len(buf), 44, 8)
 		if err != nil {
 			return err
 		}
