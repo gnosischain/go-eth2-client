@@ -236,7 +236,7 @@ func (e *ExecutionPayload) UnmarshalSSZ(buf []byte) error {
 	// Field (14) 'Withdrawals'
 	{
 		buf = tail[o14:]
-		num, err := ssz.DivideInt2(len(buf), 44, 16)
+		num, err := ssz.DivideInt2(len(buf), 44, 8)
 		if err != nil {
 			return err
 		}
@@ -370,7 +370,7 @@ func (e *ExecutionPayload) HashTreeRootWith(hh ssz.HashWalker) (err error) {
 				return
 			}
 		}
-		hh.MerkleizeWithMixin(subIndx, num, 16)
+		hh.MerkleizeWithMixin(subIndx, num, 8)
 	}
 
 	// Field (15) 'BlobGasUsed'
