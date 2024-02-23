@@ -361,7 +361,7 @@ func (e *ExecutionPayload) HashTreeRootWith(hh ssz.HashWalker) (err error) {
 	{
 		subIndx := hh.Index()
 		num := uint64(len(e.Withdrawals))
-		if num > 16 {
+		if num > 8 {
 			err = ssz.ErrIncorrectListSize
 			return
 		}
